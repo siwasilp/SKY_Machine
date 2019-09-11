@@ -57,11 +57,11 @@ void UpdateData(void) {
   if (ArrDataCMD[nBuffer] == 0x0d) {
     int temp_ID = ArrDataCMD[nBuffer - 2] & 0xf;
     temp_ID = temp_ID * 16 + (ArrDataCMD[nBuffer - 1] & 0xf);
-    Serial.println(temp_ID, HEX);
-    if (temp_ID == my_ID) {
+    Serial.println(ArrDataCMD[nBuffer]);
+   
       if ((ArrDataCMD[nBuffer - 3] == 'W') || (ArrDataCMD[nBuffer - 3] == 'w'))  Write_Data();
       if ((ArrDataCMD[nBuffer - 3] == 'R') || (ArrDataCMD[nBuffer - 3] == 'r'))  Read_Data();
       if ((ArrDataCMD[nBuffer - 3] == 'U') || (ArrDataCMD[nBuffer - 3] == 'u'))  Incress_Data();
-    }
+    
   }
 }

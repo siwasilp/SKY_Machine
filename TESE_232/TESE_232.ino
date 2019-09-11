@@ -62,6 +62,8 @@ void loop() {
     for (int i = 0; i < nBuffer; i++)
       ArrDataCMD[i] = ArrDataCMD[i + 1];
     ArrDataCMD[nBuffer] = Serial2.read();
+   Serial.println(Serial2.read());
     UpdateData();
   }
+   
 }
